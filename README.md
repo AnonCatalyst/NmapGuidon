@@ -14,19 +14,23 @@ NmapGuidon is a Python-based command-line tool designed to streamline and enhanc
 1. **Clone the repository:**
    ```
    git clone https://github.com/your-username/NmapGuidon.git
-   cd NmapGuidon```
+   cd NmapGuidon
+   ```
 
 2. **Install Dependencies:**
 ```
-pip install -r requirements.txt```
+pip install -r requirements.txt
+```
 
 3. **Run the Script:**
 ```
-python nmap_guidon.py```
+python nmap_guidon.py
+```
 
 4. **Follow the On-Screen Menu:**
 ```
-Navigate through the interactive menu to choose from a variety of Nmap scanning options tailored to your needs.```
+Navigate through the interactive menu to choose from a variety of Nmap scanning options tailored to your needs.
+```
 
 # Menu Options
 - Explore a comprehensive set of scanning options, including:
