@@ -2,7 +2,6 @@ import subprocess
 import os
 import platform
 import logging
-import time
 from datetime import datetime
 from colorama import Fore, Style, init
 from pytz import timezone
@@ -99,4 +98,34 @@ def nmap_commands():
         30: None  # Exit
     }
     return nmap_commands
+
+def main():
+    while True:
+        clear_terminal()
+        print_banner()
+        menu()
+        choice = input("Enter your choice (1-30): ")
+
+        if choice.isdigit():
+            choice = int(choice)
+            if choice == 30:  # Exit option
+                print("Exiting NmapGuidon...")
+                break
+            elif choice in nmap_commands():
+                nmap_command = nmap_commands()[choice]
+                if nmap_command:
+                    target = input("Enter target(s): ")
+                    command = nmap_command.replace("<target>", target)
+                    subprocess.run(command, shell=True)
+                    input("Press Enter to continue...")
+                else:
+                    print("Invalid option. Please choose again.")
+            else:
+                print("Invalid option. Please choose again.")
+        else:
+            print("Invalid input. Please enter a number.")
+
+
+if __name__ == "__main__":
+    main()
 
