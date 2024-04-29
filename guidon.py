@@ -5,6 +5,7 @@ import logging
 import time
 from datetime import datetime
 from colorama import Fore, Style, init
+from pytz import timezone
 
 init(autoreset=True)
 
@@ -66,6 +67,4 @@ def menu():
 
 def nmap_commands():
     nmap_commands = {
-        1: ("nmap {}", "target_arg"),
-        2: ("nmap {}-{}", "start end"),
-        3: ("nmap
+        1: ("nmap -Pn -sS -p
