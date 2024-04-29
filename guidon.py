@@ -67,4 +67,36 @@ def menu():
 
 def nmap_commands():
     nmap_commands = {
-        1: ("nmap -Pn -sS -p
+        1: "nmap -Pn -sS -p <port> <host>",  # Scan a single host
+        2: "nmap -Pn -sS -p <port> <start_ip>-<end_ip>",  # Scan a host range
+        3: "nmap -Pn -sS -p <port> <subnet>",  # Scan a subnet
+        4: "nmap -Pn -sL <target>",  # List scan
+        5: "nmap -Pn -sV <target>",  # Version detection
+        6: "nmap -Pn -O <target>",  # OS detection
+        7: "nmap -Pn -A <target>",  # Aggressive scan
+        8: "nmap -Pn -sC <target>",  # Service version and script scanning
+        9: "nmap -Pn -p <port> --script <script> <target>",  # Scan using a specific script
+        10: "nmap -Pn <target1> <target2> ...",  # Scan multiple targets
+        11: "nmap -Pn -f -D RND:10 <target>",  # Firewall evasion techniques
+        12: "nmap -Pn -sV --version-all <target>",  # Aggressive service version detection
+        13: "nmap --script-help all",  # Show all available NSE scripts
+        14: "nmap <custom_command>",  # Custom Nmap command
+        15: "nmap -Pn -sS -p- <target>",  # Full TCP port scan
+        16: "nmap -Pn -sU -p 1-65535 <target>",  # UDP port scan
+        17: "nmap -Pn -T<0-5> <target>",  # Timing and performance options
+        18: "nmap -Pn -sS -sV -p <port> --script=banner <target>",  # Banner grabbing
+        19: "nmap -Pn --traceroute <target>",  # Traceroute
+        20: "nmap -Pn -sn <target>",  # Host discovery
+        21: "nmap -Pn -Pn -sS -sV -O <target>",  # Service version and OS detection without host discovery
+        22: "nmap -Pn -Pn -sS -sV --version-all <target>",  # Aggressive service version detection without host discovery
+        23: "nmap -Pn --top-ports <N> <target>",  # Scan top N ports
+        24: "nmap -Pn --open <target>",  # List all open ports
+        25: "nmap -Pn -p 0-65535 -sI <zombie host> <target>",  # Firewall IDLE scan
+        26: "nmap -Pn --script vuln <target>",  # Script scan for common vulnerabilities
+        27: "nmap -Pn --script <script> <target>",  # Scan using the Nmap Scripting Engine (NSE)
+        28: "nmap -Pn --script ssl-heartbleed <target>",  # Scan for Heartbleed vulnerability
+        29: "nmap -Pn --script ssl-enum-ciphers <target>",  # Detect and list SSL/TLS ciphers
+        30: None  # Exit
+    }
+    return nmap_commands
+
